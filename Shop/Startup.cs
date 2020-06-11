@@ -29,6 +29,12 @@ namespace Shop
 
             services.AddDbContext<ShopDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Shop")));
 
+            services.AddCors(options => options
+                .AddDefaultPolicy(builder => builder
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .AllowAnyOrigin()));
+
             services.AddControllersWithViews();
 
             services.AddSpaStaticFiles(configuration =>
@@ -48,6 +54,8 @@ namespace Shop
                 app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
+
+            app.UseCors();
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
