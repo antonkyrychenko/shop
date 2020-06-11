@@ -1,8 +1,11 @@
 import * as React from 'react';
-import { Route } from 'react-router';
+import { Route, Switch } from 'react-router';
+import ProductCatalogPage from '../pages/ProductCatalogPage/ProductCatalogPage';
+import OrderPage from '../pages/OrderPage/OrderPage';
 
 export default () => (
-    <div>
-        
-    </div>
+    <Switch>
+        <Route path={''} component={ProductCatalogPage} />
+        <Route path={'/order'} component={OrderPage} />
+    </Switch>
 );

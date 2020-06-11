@@ -1,7 +1,7 @@
-enum ProductsAction {
+enum CatalogAction {
     GET_PRODUCTS_REQUEST = 'GET_PRODUCTS_REQUEST',
     GET_PRODUCTS_SUCCESS = 'GET_PRODUCTS_SUCCESS',
     GET_PRODUCTS_FAILURE = 'GET_PRODUCTS_FAILURE',
 }
 
-export default ProductsAction
+export default CatalogAction

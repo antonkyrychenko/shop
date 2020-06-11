@@ -1,6 +1,6 @@
 import { routerActions } from 'connected-react-router';
 import { ActionType } from 'typesafe-actions';
-import * as productActions from './products/products.actions';
+import * as productActions from './catalog/products.actions';
 
 const actions = {
     router: routerActions,
