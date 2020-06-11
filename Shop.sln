@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.WebApi", "Shop\Shop.We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Domain", "Shop.Domain\Shop.Domain.csproj", "{8885F67C-8BB4-470A-959C-17EEC673C6C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Persistence", "Shop.Infrastructure\Shop.Persistence.csproj", "{D501C428-32E0-4C3B-835C-BE6AFBB7C85E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Services", "Shop.Services\Shop.Services.csproj", "{AD582DE9-506F-4508-9DA5-4B0F3D8F799A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{8885F67C-8BB4-470A-959C-17EEC673C6C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8885F67C-8BB4-470A-959C-17EEC673C6C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8885F67C-8BB4-470A-959C-17EEC673C6C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D501C428-32E0-4C3B-835C-BE6AFBB7C85E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D501C428-32E0-4C3B-835C-BE6AFBB7C85E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D501C428-32E0-4C3B-835C-BE6AFBB7C85E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D501C428-32E0-4C3B-835C-BE6AFBB7C85E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD582DE9-506F-4508-9DA5-4B0F3D8F799A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD582DE9-506F-4508-9DA5-4B0F3D8F799A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD582DE9-506F-4508-9DA5-4B0F3D8F799A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD582DE9-506F-4508-9DA5-4B0F3D8F799A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

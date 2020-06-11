@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using Shop.Domain.Models;
+using Shop.Services.Interfaces;
+using Shop.WebApi.Models;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Shop.Controllers
 {
@@ -11,7 +11,18 @@ namespace Shop.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
+        private readonly IProductService _productService;
+        public ProductsController(IProductService productService)
+        {
+            this._productService = productService;
+        }
+
         [HttpGet("")]
-        public IActionResult GetProducts()
+        public async Task<IActionResult> GetProducts()
+        {
+            var products = await _productService.GetProducts();
+
+            return Ok(new ResponseObject<List<Product>>(products));
+        }
     }
 }
