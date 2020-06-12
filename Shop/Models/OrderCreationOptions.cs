@@ -1,13 +1,16 @@
 ﻿using Shop.Domain.Enums;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace Shop.Domain.Models
+namespace Shop.WebApi.Models
 {
-    public class Order
+    public class OrderCreationOptions
     {
-        public Guid OrderId { get; set; }
+        public string PhoneNumber { get; set; }
 
-        public Guid CustomerId { get; set; }
+        public string CustomerName { get; set; }
 
         public Guid ProductId { get; set; }
 
@@ -19,10 +22,6 @@ namespace Shop.Domain.Models
 
         public PaynmentMethod PaynmentMethod { get; set; }
 
-        public DateTime SoldTime { get; set; }
 
-        public Product Product { get; set; }
-
-        public Customer Customer { get; set; }
     }
 }

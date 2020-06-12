@@ -21,12 +21,15 @@ namespace Shop
 
         public IConfiguration Configuration { get; }
 
-
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IDbContextSeeder<ShopDbContext>, ShopDbContextSeeder>();
-            services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<IDbContextSeeder<ShopDbContext>, ShopDbContextSeeder>();          
             services.AddTransient<IPaymentSystemSeeder, StripePaymentSystemSeeder>();
+
+            services.AddTransient<IProductService, ProductService>();
+
+            services.AddTransient<ICustomerService, CustomerService>();
+            services.AddTransient<IOrderService, OrderService>();
 
             services.AddDbContext<ShopDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Shop")));
 
