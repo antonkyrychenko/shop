@@ -37,11 +37,14 @@ namespace Shop
                     .AllowAnyOrigin()));
 
             services.AddControllersWithViews();
-            Stripe.StripeConfiguration.ApiKey = "sk_test_51GsnLpB6xT8mI5TkvYrgoIKaZULDKTpXqEvsooyinkRYqLrzMUls5myeN8WsCjuJSb9OFffEX1dLStpP1OtBCUPu00VH2OtFwG";
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
+
+            // Set Stripe secret key
+            Stripe.StripeConfiguration.ApiKey = Configuration.GetSection("Stripe:Secret").Value;
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
