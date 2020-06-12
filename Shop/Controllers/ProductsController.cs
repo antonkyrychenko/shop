@@ -20,7 +20,7 @@ namespace Shop.Controllers
         [HttpGet("")]
         public async Task<IActionResult> GetProducts()
         {
-            var products = await _productService.GetProducts();
+            var products = await _productService.GetProductsAsync();
 
             return Ok(new ResponseObject<List<Product>>(products));
         }

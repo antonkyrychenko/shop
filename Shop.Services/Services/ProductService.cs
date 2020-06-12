@@ -16,7 +16,7 @@ namespace Shop.Services.Services
             _context = context;
         }
 
-        public Task<List<Product>> GetProducts()
+        public Task<List<Product>> GetProductsAsync()
         {
             return _context.Products.ToListAsync();
         }

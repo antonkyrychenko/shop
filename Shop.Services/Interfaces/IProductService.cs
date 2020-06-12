@@ -6,6 +6,6 @@ namespace Shop.Services.Interfaces
 {
     public interface IProductService
     {
-        Task<List<Product>> GetProducts();
+        Task<List<Product>> GetProductsAsync();
     }
 }
