@@ -26,6 +26,7 @@ namespace Shop
         {
             services.AddTransient<IDbContextSeeder<ShopDbContext>, ShopDbContextSeeder>();
             services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<IPaymentSystemSeeder, StripePaymentSystemSeeder>();
 
             services.AddDbContext<ShopDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Shop")));
 
@@ -36,7 +37,7 @@ namespace Shop
                     .AllowAnyOrigin()));
 
             services.AddControllersWithViews();
-
+            Stripe.StripeConfiguration.ApiKey = "sk_test_51GsnLpB6xT8mI5TkvYrgoIKaZULDKTpXqEvsooyinkRYqLrzMUls5myeN8WsCjuJSb9OFffEX1dLStpP1OtBCUPu00VH2OtFwG";
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/build";
