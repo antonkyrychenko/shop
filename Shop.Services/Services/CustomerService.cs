@@ -32,7 +32,7 @@ namespace Shop.Services.Services
 
         public Task<Customer> GetCustomerByNameAsync(string fullName)
         {
-            return _context.Customers.AsNoTracking().FirstAsync(c => c.FullName == fullName);
+            return _context.Customers.AsNoTracking().FirstOrDefaultAsync(c => c.FullName == fullName);
         }
 
         public Task SaveChangesAsync()

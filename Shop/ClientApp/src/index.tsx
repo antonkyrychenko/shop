@@ -8,14 +8,16 @@ import { Provider } from 'react-redux';
 import configureStore from './store/store';
 import history from './store/history';
 import { ThemeProvider, CssBaseline, ThemeOptions, createMuiTheme } from '@material-ui/core';
-import { green } from '@material-ui/core/colors';
+import { green, red, indigo, orange, lightGreen } from '@material-ui/core/colors';
 
 const store = configureStore();
 
 const themeOptions: ThemeOptions = {
   palette: {
     type: "dark",
-    primary: green
+    primary: lightGreen,
+    secondary: green,
+    error: red
   }
 };
 

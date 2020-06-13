@@ -6,7 +6,7 @@ namespace Shop.Services.Interfaces
 {
     public interface IOrderService
     {
-        void CreateOrder(Guid customerId, Guid productId, long unitAmount, string city, DeliveryMethod deliveryMethod, PaynmentMethod paynmentMethod);
+        void CreateOrder(Guid customerId, Guid productId, string city, DeliveryMethod deliveryMethod, PaymentMethod paynmentMethod);
 
         Task SaveChangesAsync();
     }

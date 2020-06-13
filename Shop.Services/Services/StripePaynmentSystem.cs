@@ -3,31 +3,34 @@ using Stripe.Checkout;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Stripe;
+using System.Linq;
 
 namespace Shop.Services.Services
 {
     public class StripePaynmentSystem : IPaymentSystem
     {
-        public async Task<string> CreateCheckoutSessionAsync(Guid productId, string successUrl, string cancelUrl)
+        public async Task<string> CreatePaymentIntentAsync(Guid productId, string successUrl, string cancelUrl)
         {
-            var options = new SessionCreateOptions
+            var priceService = new PriceService();
+            var price = priceService.List(new PriceListOptions()
             {
-                PaymentMethodTypes = new List<string> { "card", },
-                LineItems = new List<SessionLineItemOptions> {
-                     new SessionLineItemOptions {
-                        Price = productId.ToString(),
-                        Quantity = 1,
-                     },
-                },
-                Mode = "payment",
-                SuccessUrl = successUrl,
-                CancelUrl = cancelUrl,
+                Product = productId.ToString()
+            }).First();
+
+            var options = new PaymentIntentCreateOptions
+            {
+                Amount = price.UnitAmount,
+                Currency = "usd",
+                PaymentMethodTypes = new List<string>
+                  {
+                    "card",
+                  },
             };
+            var service = new PaymentIntentService();
+            var payment = await service.CreateAsync(options);
 
-            var service = new SessionService();
-            var session = await service.CreateAsync(options);
-
-            return session.Id;
+            return payment.ClientSecret;
         }
 
     }

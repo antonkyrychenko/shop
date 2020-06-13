@@ -3,10 +3,12 @@ import history from '../history';
 import { connectRouter } from 'connected-react-router';
 import { StateType } from 'typesafe-actions';
 import catalogReducer from './catalog.reducer';
+import orderReducer from './order.reducer';
 
 const reducers = combineReducers({
     router: connectRouter(history),
-    catalog: catalogReducer
+    catalog: catalogReducer,
+    order: orderReducer,
 });
 
 export default reducers;

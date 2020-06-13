@@ -1,8 +1,5 @@
 ﻿using Shop.Domain.Enums;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Shop.WebApi.Models
 {
@@ -14,14 +11,10 @@ namespace Shop.WebApi.Models
 
         public Guid ProductId { get; set; }
 
-        public long UnitAmount { get; set; }
-
         public string City { get; set; }
 
         public DeliveryMethod DeliveryMethod { get; set; }
 
-        public PaynmentMethod PaynmentMethod { get; set; }
-
-
+        public PaymentMethod PaymentMethod { get; set; }
     }
 }

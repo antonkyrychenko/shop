@@ -5,6 +5,6 @@ namespace Shop.Services.Interfaces
 {
     public interface IPaymentSystem
     {
-        Task<string> CreateCheckoutSessionAsync(Guid productId, string successUrl, string cancelUrl);
+        Task<string> CreatePaymentIntentAsync(Guid productId, string successUrl, string cancelUrl);
     }
 }

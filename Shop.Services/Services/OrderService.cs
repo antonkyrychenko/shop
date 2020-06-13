@@ -16,17 +16,16 @@ namespace Shop.Services.Services
             _context = context;
         }
 
-        public void CreateOrder(Guid customerId, Guid productId, long unitAmount, string city, DeliveryMethod deliveryMethod, PaynmentMethod paynmentMethod)
+        public void CreateOrder(Guid customerId, Guid productId, string city, DeliveryMethod deliveryMethod, PaymentMethod paymentMethod)
         {
             var order = new Order()
             {
                 OrderId = Guid.NewGuid(),
                 CustomerId = customerId,
                 ProductId = productId,
-                UnitAmount = unitAmount,
                 City = city,
                 DeliveryMethod = deliveryMethod,
-                PaynmentMethod = paynmentMethod,
+                PaymentMethod = paymentMethod,
                 SoldTime = DateTime.Now
             };
 

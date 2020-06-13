@@ -1,13 +1,6 @@
 import { makeStyles, Theme } from "@material-ui/core/styles";
 
-const useOrderStyles = makeStyles((theme: Theme) => ({
-    root: {
-        fontFamily: "Verdana",
-    },
-    drawerPaper: {
-        width: "400px",
-        padding: "10px 20px"
-    },
+const useCheckoutFormStyles = makeStyles((theme: Theme) => ({
     title: {
         textAlign: "center",
         fontSize: 35,
@@ -21,7 +14,13 @@ const useOrderStyles = makeStyles((theme: Theme) => ({
         '& > *': {
             marginBottom: 10
         }
+    },
+    card: {
+        fontSize: 20
+    },
+    errorMessage: {
+        color: "#bf1650"
     }
 }));
 
-export default useOrderStyles;
+export default useCheckoutFormStyles;

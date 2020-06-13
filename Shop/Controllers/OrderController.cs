@@ -30,7 +30,7 @@ namespace Shop.WebApi.Controllers
                 customer = _customerService.AddCustomer(order.CustomerName, order.PhoneNumber);
             }
 
-            _orderService.CreateOrder(customer.CustomerId, order.ProductId, order.UnitAmount, order.City, order.DeliveryMethod, order.PaynmentMethod);
+            _orderService.CreateOrder(customer.CustomerId, order.ProductId, order.City, order.DeliveryMethod, order.PaymentMethod);
             await _orderService.SaveChangesAsync();
 
             return Ok(new ResponseObject<object>());

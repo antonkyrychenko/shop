@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Shop.Infrastructure;
 
 namespace Shop.Infrastructure.Migrations
 {
     [DbContext(typeof(ShopDbContext))]
-    partial class ShopContextModelSnapshot : ModelSnapshot
+    [Migration("20200613101241_RemoveOrderColumn")]
+    partial class RemoveOrderColumn
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,7 +53,7 @@ namespace Shop.Infrastructure.Migrations
                     b.Property<short>("DeliveryMethod")
                         .HasColumnType("smallint");
 
-                    b.Property<int>("PaymentMethod")
+                    b.Property<int>("PaynmentMethod")
                         .HasColumnType("int");
 
                     b.Property<Guid>("ProductId")

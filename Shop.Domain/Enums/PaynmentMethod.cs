@@ -1,8 +1,8 @@
 ﻿namespace Shop.Domain.Enums
 {
-    public enum PaynmentMethod
+    public enum PaymentMethod
     {
-        Cart,
+        Card,
         Cash
     }
 }

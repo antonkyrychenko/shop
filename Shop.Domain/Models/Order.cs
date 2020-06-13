@@ -11,13 +11,11 @@ namespace Shop.Domain.Models
 
         public Guid ProductId { get; set; }
 
-        public long UnitAmount { get; set; }
-
         public string City { get; set; }
 
         public DeliveryMethod DeliveryMethod { get; set; }
 
-        public PaynmentMethod PaynmentMethod { get; set; }
+        public PaymentMethod PaymentMethod { get; set; }
 
         public DateTime SoldTime { get; set; }
 
