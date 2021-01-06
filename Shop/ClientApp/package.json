@@ -7,7 +7,7 @@
     "@material-ui/styles": "^4.10.0",
     "@stripe/react-stripe-js": "^1.1.2",
     "@stripe/stripe-js": "^1.7.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "connected-react-router": "6.5.2",
     "history": "4.10.1",
     "react": "16.11.0",
